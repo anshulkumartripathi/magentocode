@@ -3,10 +3,8 @@ pipeline {
   stages {
     stage('Execute shell commands'){
       steps {
-        sh """
-           cd /var/www/html/magento2/bin
-           magento setup:upgrade
-           """
+          sh 'cd /var/www/html/magento2/'
+          sh 'php bin/magento setup:upgrade'
       }
     }
   }
